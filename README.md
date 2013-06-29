@@ -33,7 +33,7 @@
     	c:port="#{testServer.port}"
     	c:appBase="src/main"/>
 
-#### 3. 2번 파일을 @ContextConfiguratio로 지정해서  테스트 실행
+#### 3. 2번 파일을 @ContextConfiguration로 지정해서  테스트 실행
 
     import static net.sourceforge.jwebunit.junit.JWebUnit.*;
     import static org.hamcrest.CoreMatchers.*;
