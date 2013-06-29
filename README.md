@@ -24,7 +24,7 @@
     port=8080
     baseUrl=http://localhost:8080
 
-#### 2. net.benelog.tomcatbed.WebApplicationServer를 bean등록. 
+#### 2. net.benelog.tomcatbed.WebApplicationServer를 bean등록 
 
     <util:properties id="testServer" location="classpath:testServer.properties" />
     
@@ -33,13 +33,12 @@
     	c:port="#{testServer.port}"
     	c:appBase="src/main"/>
 
-#### 3. 2번 파일을 @ContextConfiguratio로 지정해서  테스트실행
+#### 3. 2번 파일을 @ContextConfiguratio로 지정해서  테스트 실행
 
     import static net.sourceforge.jwebunit.junit.JWebUnit.*;
     import static org.hamcrest.CoreMatchers.*;
     import static org.junit.Assert.*;
     import net.benelog.tomcatbed.domain.Image;
-    
     import org.junit.Before;
     import org.junit.Test;
     import org.junit.runner.RunWith;
