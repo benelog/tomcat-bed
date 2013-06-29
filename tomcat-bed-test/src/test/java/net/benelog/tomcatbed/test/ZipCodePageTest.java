@@ -6,6 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpStatus;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -30,7 +31,7 @@ public class ZipCodePageTest {
 		setTextField("zipCode", "121-270");
 	   submit();
 
-	   assertResponseCode(200);
+	   assertResponseCode(HttpStatus.OK.value());
 		assertTitleEquals("Address");
 		assertElementPresent("address");
 		assertMatch("서울특별시 마포구 상암동");

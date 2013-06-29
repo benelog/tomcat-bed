@@ -41,15 +41,15 @@ public class HomeMvcTest {
 	}
 
 	@Test
-	public void imageCloud() throws Exception {
-	    mvc.perform(get("/viewImage/cloud.png"))
+	public void imageJson() throws Exception {
+	    mvc.perform(get("/viewImage/cloud.json"))
 		   .andExpect(status().isOk())
 		   	.andExpect(content().string("{\"src\":\"/img/cloud.png\",\"height\":64,\"width\":64}"));
 	}
 
 	@Test
-	public void image() throws Exception {
-	    mvc.perform(get("/viewImage/phone.png"))
+	public void containsImagePath() throws Exception {
+	    mvc.perform(get("/viewImage/phone.json"))
 		   .andExpect(status().isOk())
 		   	.andExpect(content().string(containsString("/img/phone.png")));
 	}

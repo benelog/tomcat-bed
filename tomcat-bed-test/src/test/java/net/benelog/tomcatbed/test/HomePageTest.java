@@ -9,6 +9,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpStatus;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.web.client.RestTemplate;
@@ -28,12 +29,12 @@ public class HomePageTest {
 	@Test
 	public void home() {
 		beginAt("/"); 
-		System.out.println(getPageSource());
-		assertResponseCode(200);
-		
+
+		assertResponseCode(HttpStatus.OK.value());
 		assertButtonPresent("computer");
 		assertButtonPresent("cloud");
 		assertButtonPresent("code");
+		System.out.println(getPageSource());
 	}
 
 	@Test
