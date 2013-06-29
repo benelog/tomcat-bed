@@ -18,13 +18,13 @@
 - 태그라이브러리 선언파일(*.tld)를 수동으로 등록해야 인식된다.
 
 ## Spring 프레임워크와 통합 사용법
-1. (선택) test서버를 정의한 속성파일 정의. Localhost가 아닌곳에서도 같은 테스트를 실행할 수 있다.
+#### 1. (선택) test서버를 정의한 속성파일 정의. Localhost가 아닌곳에서도 같은 테스트를 실행할 수 있다.
 
     contextPath=/
     port=8080
     baseUrl=http://localhost:8080
 
-2. net.benelog.tomcatbed.WebApplicationServer를 bean등록. 
+#### 2. net.benelog.tomcatbed.WebApplicationServer를 bean등록. 
 
     <util:properties id="testServer" location="classpath:testServer.properties" />
     
@@ -33,7 +33,7 @@
     	c:port="#{testServer.port}"
     	c:appBase="src/main"/>
 
-3. 2번 파일을 @ContextConfiguratio로 지정해서  테스트실행
+#### 3. 2번 파일을 @ContextConfiguratio로 지정해서  테스트실행
 
     import static net.sourceforge.jwebunit.junit.JWebUnit.*;
     import static org.hamcrest.CoreMatchers.*;
